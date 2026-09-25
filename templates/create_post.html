@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-box wide">
+
+    <h2>Create New Post</h2>
+
+    <form method="POST">
+
+        <label>Post Title</label>
+
+        <input
+            type="text"
+            name="title"
+            placeholder="Enter your post title"
+            required
+        >
+
+        <label>Content</label>
+
+        <textarea
+            name="content"
+            rows="12"
+            placeholder="Write your blog post here..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Save Post
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
