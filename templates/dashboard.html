@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <div>
+        <h1>My Dashboard</h1>
+        <p>Manage your blog posts here.</p>
+    </div>
+
+    <a class="button" href="{{ url_for('create_post') }}">
+        Create Post
+    </a>
+
+</div>
+
+
+{% if posts %}
+
+    {% for post in posts %}
+
+        <div class="post-card">
+
+            <h3>{{ post["title"] }}</h3>
+
+            {% if post["published"] %}
+
+                <span class="status published">
+                    Published
+                </span>
+
+            {% else %}
+
+                <span class="status draft">
+                    Draft
+                </span>
+
+            {% endif %}
+
+
+            <p>
+                {{ post["content"][:150] }}
+
+                {% if post["content"]|length > 150 %}
+                    ...
+                {% endif %}
+            </p>
+
+
+            <div class="actions">
+
+                <a
+                    class="button small"
+                    href="{{ url_for('edit_post', post_id=post['id']) }}">
+                    Edit
+                </a>
+
+
+                {% if post["published"] %}
+
+                    <a
+                        class="button small"
+                        href="{{ url_for('unpublish_post', post_id=post['id']) }}">
+                        Unpublish
+                    </a>
+
+                    <a
+                        class="button small"
+                        href="{{ url_for('view_post', post_id=post['id']) }}">
+                        View
+                    </a>
+
+                {% else %}
+
+                    <a
+                        class="button small"
+                        href="{{ url_for('publish_post', post_id=post['id']) }}">
+                        Publish
+                    </a>
+
+                {% endif %}
+
+
+                <a
+                    class="button danger small"
+                    href="{{ url_for('delete_post', post_id=post['id']) }}"
+                    onclick="return confirm('Delete this post?');">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+{% else %}
+
+    <div class="empty">
+
+        <p>You have not created any posts yet.</p>
+
+        <a
+            class="button"
+            href="{{ url_for('create_post') }}">
+            Create Your First Post
+        </a>
+
+    </div>
+
+{% endif %}
+
+{% endblock %}
