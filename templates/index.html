@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Welcome to My Personal Blog</h1>
+
+    <p>
+        Read and explore my latest blog posts.
+    </p>
+
+    {% if not session.get('user_id') %}
+        <a class="button" href="{{ url_for('register') }}">
+            Create an Account
+        </a>
+    {% endif %}
+</section>
+
+
+<h2>Latest Posts</h2>
+
+
+{% if posts %}
+
+    {% for post in posts %}
+
+        <div class="post-card">
+
+            <h3>{{ post["title"] }}</h3>
+
+            <p class="author">
+                By {{ post["username"] }}
+            </p>
+
+            <p>
+                {{ post["content"][:180] }}
+
+                {% if post["content"]|length > 180 %}
+                    ...
+                {% endif %}
+            </p>
+
+            <a class="button small"
+               href="{{ url_for('view_post', post_id=post['id']) }}">
+                Read More
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="empty">
+        <p>No published posts yet.</p>
+    </div>
+
+{% endif %}
+
+{% endblock %}
