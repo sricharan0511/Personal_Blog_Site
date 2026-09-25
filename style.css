@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+nav {
+    background: #222;
+    color: white;
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.hero {
+    background: white;
+    padding: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.button,
+button {
+    display: inline-block;
+    background: #222;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+    background: #444;
+}
+
+.small {
+    padding: 7px 12px;
+    font-size: 14px;
+}
+
+.post-card {
+    background: white;
+    padding: 25px;
+    margin: 18px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.post-card h3 {
+    margin-top: 0;
+}
+
+.author {
+    color: #777;
+    font-size: 14px;
+}
+
+.form-box {
+    background: white;
+    width: 450px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-box.wide {
+    width: 700px;
+}
+
+.form-box h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+.message {
+    background: #e8f5e9;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.published {
+    background: #d9f5df;
+    color: #247a39;
+}
+
+.draft {
+    background: #eee;
+    color: #555;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.danger {
+    background: #b3261e;
+}
+
+.danger:hover {
+    background: #8e1d17;
+}
+
+.empty {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.single-post {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.single-post h1 {
+    margin-top: 0;
+}
+
+.post-content {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    margin: 30px 0;
+}
