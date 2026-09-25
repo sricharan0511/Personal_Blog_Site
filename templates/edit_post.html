@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-box wide">
+
+    <h2>Edit Post</h2>
+
+    <form method="POST">
+
+        <label>Post Title</label>
+
+        <input
+            type="text"
+            name="title"
+            value="{{ post['title'] }}"
+            required
+        >
+
+        <label>Content</label>
+
+        <textarea
+            name="content"
+            rows="12"
+            required
+        >{{ post['content'] }}</textarea>
+
+        <button type="submit">
+            Update Post
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
